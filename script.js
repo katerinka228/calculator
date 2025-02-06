@@ -19,12 +19,21 @@ for (item of btn) {
 
 let equal = function () {
     if (screen.value !== '') {
-        screen.value = eval(screen.value);
+        if (screen.value.includes("/0") && !screen.value.includes("/0.")) {
+            screen.value = 'Ошибка';
+        } else {
+            screen.value = eval(screen.value);
+        }
     }
 };
 
 let sqrt = function () {
-    screen.value = Math.sqrt(screen.value);
+    if (screen.value >= 0) {
+        screen.value = Math.sqrt(screen.value);
+    }
+    else {
+        screen.value = 'Ошибка';
+    }
 };
 
 let pow = function () {
@@ -40,23 +49,21 @@ let clearAll = function () {
 };
 
 let correctInput = function (textBtn) {
-    if (screen.value === '')
-    {
-        if (!(textBtn === '+' || textBtn === '*' || textBtn === '/' || textBtn === '.'))
-        {
+    if (screen.value === '') {
+        if (!(textBtn === '+' || textBtn === '*' || textBtn === '/' || textBtn === '.')) {
             screen.value += textBtn;
         }
     } else {
         let lastChar = screen.value.substring(screen.value.length - 1);
         let condition1 = lastChar === '+' || lastChar === '*' || lastChar === '/' || lastChar === '.' || lastChar === '-';
         let condition2 = textBtn === '+' || textBtn === '*' || textBtn === '/' || textBtn === '.' || textBtn === '-';
-        if (!(condition1 && (condition2)))
-        {
+        if (!(condition1 && (condition2))) {
             screen.value += textBtn;
         }
     }
-
 }
+
+
 
 
 
