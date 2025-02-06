@@ -1,43 +1,33 @@
 let screen = document.querySelector("#screen");
 let btn = document.querySelectorAll(".btn");
-// let equal = document.querySelector('#equal');
 
-for (item of btn)
-{
+for (item of btn) {
     item.addEventListener("click", (e) => {
         btnText = e.target.textContent;
-        if (btnText === "x")
-        {
+        if (btnText === "x") {
             btnText = '*';
-        }
-        if (btnText === "÷")
-        {
+        } else if (btnText === "÷") {
             btnText = '/';
-        }
-        if (btnText === "–")
-        {
+        } else if (btnText === "–") {
             btnText = '-';
         }
-        screen.value += btnText;
 
+        correctInput(btnText);
     })
 }
 
-// equal.onclick = function () {
-//     screen.value = eval(screen.value);
-// };
-let equal = function ()
-{
-    screen.value = eval(screen.value);
+
+let equal = function () {
+    if (screen.value !== '') {
+        screen.value = eval(screen.value);
+    }
 };
 
-let sqrt = function ()
-{
+let sqrt = function () {
     screen.value = Math.sqrt(screen.value);
 };
 
-let pow = function ()
-{
+let pow = function () {
     screen.value = Math.pow(screen.value, 2);
 };
 
@@ -48,3 +38,25 @@ let backSpace = function () {
 let clearAll = function () {
     screen.value = "";
 };
+
+let correctInput = function (textBtn) {
+    if (screen.value === '')
+    {
+        if (!(textBtn === '+' || textBtn === '*' || textBtn === '/' || textBtn === '.'))
+        {
+            screen.value += textBtn;
+        }
+    } else {
+        let lastChar = screen.value.substring(screen.value.length - 1);
+        let condition1 = lastChar === '+' || lastChar === '*' || lastChar === '/' || lastChar === '.' || lastChar === '-';
+        let condition2 = textBtn === '+' || textBtn === '*' || textBtn === '/' || textBtn === '.' || textBtn === '-';
+        if (!(condition1 && (condition2)))
+        {
+            screen.value += textBtn;
+        }
+    }
+
+}
+
+
+
