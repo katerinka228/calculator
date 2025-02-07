@@ -83,20 +83,25 @@ button[onclick="equal()"] {
 }
 
 
-@media (max-width: 850px) {
+@media (max-height: 950px) {
     .container {
-        max-width: 900px;
-        height: 450px;
+        width: 90%;
+        max-width: 400px; /
+        height: 80vh;
         padding: 20px;
     }
 
     .display #screen {
-        height: 80px;
-        font-size: 48px;
+        height: 15vh;
+        font-size: 8vh;
+    }
+
+    .buttons {
+        height: 60vh;
     }
 
     .buttons .row button {
-        height: 60px;
-        font-size: 30px;
+        height: 10vh;
+        font-size: 5vh;
     }
 }
