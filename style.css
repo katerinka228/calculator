@@ -52,7 +52,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 10px;
-    color: black;
 }
 
 .buttons .row {
@@ -81,4 +80,24 @@ button[onclick="clearAll()"],
 button[onclick="backSpace()"],
 button[onclick="equal()"] {
     background: #ff5a45 !important;
+}
+
+
+@media (max-width: 850px) {
+    .container {
+        max-width: 900px;
+        height: 450px;
+        padding: 20px;
+    }
+
+    .display #screen {
+        height: 80px;
+        font-size: 48px;
+        width: 95%;
+    }
+
+    .buttons .row button {
+        height: 60px;
+        font-size: 30px;
+    }
 }
