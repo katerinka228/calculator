@@ -4,8 +4,7 @@
     font-style: normal;
 }
 
-body
-{
+body {
     padding: 0;
     margin: 0;
     display: flex;
@@ -15,20 +14,21 @@ body
     background: rgba(0, 0, 0, 0.85);
 }
 
-.container
-{
+.container {
     background: #ffeeff;
-    width: 20%;
-    height: 50vh;
-    padding: 10px;
+    width: 300px;
+    height: 400px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 12px 12px 15px #474747,
-                -8px -8px 15px #474747;
+    -8px -8px 15px #474747;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.display #screen
-{
-    width: 93%;
+.display #screen {
+    width: 95%;
     height: 70px;
     font-size: 43px;
     outline: none;
@@ -39,39 +39,39 @@ body
     border-radius: 6px;
     box-shadow: inset 5px 5px 5px #cbced1, inset -3px -3px 3px #ffffff;
     font-family: 'Technology.ttf', sans-serif;
-
+    margin-bottom: 10px;
 }
+
 .row .btn.number {
     background: #fdb5ef;
-
 }
-.buttons
-{
+
+.buttons {
     width: 100%;
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
 }
 
-.buttons .row button
-{
+.buttons .row {
+    display: contents;
+}
+
+.buttons .row button {
     background: #ffe6ff;
-    width: 50px;
-    height: 45px;
+    width: 100%;
+    height: 50px;
     border: none;
     font-size: 25px;
     outline: none;
-    margin: 5px;
     border-radius: 5px;
     box-shadow: 5px 5px 8px #ffffff,
-                -5px -5px 8px  #00000020;
+    -5px -5px 8px  #00000020;
     transition: .1s;
 }
 
-.buttons .row button:hover
-{
+.buttons .row button:hover {
     box-shadow: inset 3px 3px 3px rgba(16, 16, 16, .1), inset -5px -5px 8px rgba(255, 255, 255, 0.45);
     background: #ffcefd;
 }
@@ -82,3 +82,21 @@ button[onclick="equal()"] {
     background: #ff5a45 !important;
 }
 
+
+@media (max-width: 850px) {
+    .container {
+        max-width: 900px;
+        height: 450px;
+        padding: 20px;
+    }
+
+    .display #screen {
+        height: 80px;
+        font-size: 48px;
+    }
+
+    .buttons .row button {
+        height: 60px;
+        font-size: 30px;
+    }
+}
