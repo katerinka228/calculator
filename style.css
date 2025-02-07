@@ -69,6 +69,7 @@ body {
     box-shadow: 5px 5px 8px #ffffff,
     -5px -5px 8px  #00000020;
     transition: .1s;
+    color: black;
 }
 
 .buttons .row button:hover {
@@ -82,22 +83,24 @@ button[onclick="equal()"] {
     background: #ff5a45 !important;
 }
 
-
 @media (max-width: 850px) {
     .container {
-        max-width: 900px;
-        height: 450px;
-        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        min-height: 500px;
+        padding: 15px;
     }
 
     .display #screen {
-        height: 80px;
-        font-size: 48px;
         width: 95%;
+        height: 80px;
+        font-size: 12vw;
+        padding-right: 0.4em;
     }
 
     .buttons .row button {
-        height: 60px;
-        font-size: 30px;
+        height: 70px;
+        font-size: 10vw;
     }
 }
