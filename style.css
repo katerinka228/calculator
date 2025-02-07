@@ -16,8 +16,8 @@ body {
 
 .container {
     background: #ffeeff;
-    width: 300px;
-    height: 400px;
+    width: 300px; /* Размер для десктопной версии */
+    height: 400px; /* Размер для десктопной версии */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 12px 12px 15px #474747,
@@ -52,6 +52,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 10px;
+    color: black;
 }
 
 .buttons .row {
@@ -83,17 +84,18 @@ button[onclick="equal()"] {
 }
 
 
-@media (max-height: 950px) {
+@media (max-width: 768px) {
     .container {
         width: 90%;
-        max-width: 400px; /
+        max-width: 400px;
         height: 80vh;
-        padding: 20px;
+        padding: 10px;
     }
 
     .display #screen {
         height: 15vh;
         font-size: 8vh;
+        width: 95%;
     }
 
     .buttons {
