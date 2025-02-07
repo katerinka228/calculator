@@ -1,6 +1,13 @@
 let screen = document.querySelector("#screen");
 let btn = document.querySelectorAll(".btn");
 
+
+window.onload = function () {
+    if (localStorage.getItem("calculatorInput")) {
+        screen.value = localStorage.getItem("calculatorInput");
+    }
+};
+
 for (item of btn) {
     item.addEventListener("click", (e) => {
         btnText = e.target.textContent;
@@ -13,9 +20,9 @@ for (item of btn) {
         }
 
         correctInput(btnText);
-    })
+        saveToLocalStorage();
+    });
 }
-
 
 let equal = function () {
     if (screen.value !== '') {
@@ -24,28 +31,32 @@ let equal = function () {
         } else {
             screen.value = eval(screen.value);
         }
+        saveToLocalStorage();
     }
 };
 
 let sqrt = function () {
     if (screen.value >= 0) {
         screen.value = Math.sqrt(screen.value);
-    }
-    else {
+    } else {
         screen.value = 'Ошибка';
     }
+    saveToLocalStorage();
 };
 
 let pow = function () {
     screen.value = Math.pow(screen.value, 2);
+    saveToLocalStorage();
 };
 
 let backSpace = function () {
     screen.value = screen.value.substring(0, screen.value.length - 1);
+    saveToLocalStorage();
 };
 
 let clearAll = function () {
     screen.value = "";
+    saveToLocalStorage();
 };
 
 let correctInput = function (textBtn) {
@@ -61,9 +72,8 @@ let correctInput = function (textBtn) {
             screen.value += textBtn;
         }
     }
-}
+};
 
-
-
-
-
+let saveToLocalStorage = function () {
+    localStorage.setItem("calculatorInput", screen.value);
+};

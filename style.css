@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Technology.ttf';
+    src: url('./fonts/Technology.ttf');
+    font-style: normal;
+}
+
+body
+{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.container
+{
+    background: #ffeeff;
+    width: 20%;
+    height: 50vh;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 12px 12px 15px #474747,
+                -8px -8px 15px #474747;
+}
+
+.display #screen
+{
+    width: 93%;
+    height: 70px;
+    font-size: 43px;
+    outline: none;
+    border: none;
+    text-align: right;
+    padding-right: .4em;
+    background: #dee3ae;
+    border-radius: 6px;
+    box-shadow: inset 5px 5px 5px #cbced1, inset -3px -3px 3px #ffffff;
+    font-family: 'Technology.ttf', sans-serif;
+
+}
+.row .btn.number {
+    background: #fdb5ef;
+
+}
+.buttons
+{
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons .row button
+{
+    background: #ffe6ff;
+    width: 50px;
+    height: 45px;
+    border: none;
+    font-size: 25px;
+    outline: none;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px #ffffff,
+                -5px -5px 8px  #00000020;
+    transition: .1s;
+}
+
+.buttons .row button:hover
+{
+    box-shadow: inset 3px 3px 3px rgba(16, 16, 16, .1), inset -5px -5px 8px rgba(255, 255, 255, 0.45);
+    background: #ffcefd;
+}
+
+button[onclick="clearAll()"],
+button[onclick="backSpace()"],
+button[onclick="equal()"] {
+    background: #ff5a45 !important;
+}
+
